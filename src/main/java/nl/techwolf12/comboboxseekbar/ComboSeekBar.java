@@ -241,6 +241,7 @@ public class ComboSeekBar extends SeekBar implements SeekBar.OnSeekBarChangeList
 
     public void setOnValueChangeListener(OnValueChangeListener l) {
         mOnValueChangeListener = l;
+        this.setOnSeekBarChangeListener(this);
     }
 
     public interface OnValueChangeListener {
