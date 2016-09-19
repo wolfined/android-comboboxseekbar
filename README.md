@@ -1,13 +1,15 @@
  [ ![Download](https://api.bintray.com/packages/techwolf12/android/comboboxseekbar/images/download.svg) ](https://bintray.com/techwolf12/android/comboboxseekbar/_latestVersion)
 android-comboboxseekbar
 ======
-android-comboboxseekbar is a mix between a seekbar/combobox. 
-  
+android-comboboxseekbar is a mix between a seekbar/combobox.
+
+![Example](../master/promo/example.png?raw=true)
+
 Import using gradle
 
 ```gradle
 dependencies {
-    compile 'nl.techwolf12.android:comboboxseekbar:1.0.0'
+    compile 'nl.techwolf12.android:comboboxseekbar:1.0.1'
 }
 
 ```
@@ -24,7 +26,7 @@ XML:
     custom:color="#000"
     custom:multiline="false"
     custom:textSize="12sp" />
-```  
+```
 Java usage:
 
 ```java
