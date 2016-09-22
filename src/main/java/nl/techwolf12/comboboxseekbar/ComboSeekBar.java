@@ -27,6 +27,7 @@ public class ComboSeekBar extends SeekBar implements SeekBar.OnSeekBarChangeList
     private int mTextSize;
     private boolean mIsMultiline;
     private OnValueChangeListener mOnValueChangeListener;
+    private boolean textHidden = false;
 
     /**
      * @param context context.
@@ -87,13 +88,21 @@ public class ComboSeekBar extends SeekBar implements SeekBar.OnSeekBarChangeList
         invalidate();
     }
 
+    /**
+     * Set list<String> adapter
+     * @param dots String values of the dots
+     */
     public void setAdapter(List<String> dots) {
         mValues = dots;
         mDots.clear();
         int index = 0;
         for (String dotName : dots) {
             Dot dot = new Dot();
-            dot.text = dotName;
+            if (textHidden) {
+                dot.text = "";
+            } else {
+                dot.text = dotName;
+            }
             dot.id = index++;
             mDots.add(dot);
         }
@@ -225,6 +234,30 @@ public class ComboSeekBar extends SeekBar implements SeekBar.OnSeekBarChangeList
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
 
+    }
+
+    public boolean isTextHidden() {
+        return textHidden;
+    }
+
+    public void setTextHidden(boolean textHidden) {
+        this.textHidden = textHidden;
+        if (mValues != null) {
+            mDots.clear();
+            int index = 0;
+            for (String dotName : mValues) {
+                Dot dot = new Dot();
+                if (textHidden) {
+                    dot.text = "";
+                } else {
+                    dot.text = dotName;
+                }
+                dot.id = index++;
+                mDots.add(dot);
+            }
+            initDotsCoordinates();
+            setMax(index);
+        }
     }
 
     public static class Dot {
