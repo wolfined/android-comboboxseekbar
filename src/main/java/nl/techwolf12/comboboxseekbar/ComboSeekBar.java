@@ -90,6 +90,7 @@ public class ComboSeekBar extends SeekBar implements SeekBar.OnSeekBarChangeList
 
     /**
      * Set list<String> adapter
+     *
      * @param dots String values of the dots
      */
     public void setAdapter(List<String> dots) {
@@ -240,6 +241,9 @@ public class ComboSeekBar extends SeekBar implements SeekBar.OnSeekBarChangeList
         return textHidden;
     }
 
+    /*
+    * Don't show text if set to true
+     */
     public void setTextHidden(boolean textHidden) {
         this.textHidden = textHidden;
         if (mValues != null) {
