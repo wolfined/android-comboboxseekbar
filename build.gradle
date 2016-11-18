@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 24
-        versionCode 2
-        versionName "1.0.1"
+        versionCode 3
+        versionName "1.0.2"
     }
     buildTypes {
         release {
@@ -30,7 +30,7 @@ ext {
     siteUrl = 'https://github.com/wolfined/android-comboseekbar'
     gitUrl = 'https://github.com/wolfined/android-comboseekbar.git'
 
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.2'
 
     developerId = 'techwolf12'
     developerName = 'Christiaan de Die le Clercq'
